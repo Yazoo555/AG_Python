@@ -27,7 +27,7 @@ start_time = current_datetime.strftime("%Y-%m-%d %H:%M")  # Current date and tim
 
 #dynamic_title = f"Live class Testing {start_date}:: ",
 
-dynamic_title = input("Please enter the title for the exam:  {start_date}")
+dynamic_title = input("Please enter the title for the exam:{start_date}::"),
 
 
 data = {
