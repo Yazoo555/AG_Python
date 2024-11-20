@@ -1,9 +1,10 @@
 import requests
 from datetime import datetime, timedelta
+import webbrowser
+
 
 url_create_exam = "https://api-adm.ambition.guru/api/v1/admin/exams"
 user_title = input("Please enter the title for the exam: ")
-
 
 headers = {
     "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:132.0) Gecko/20100101 Firefox/132.0",
@@ -14,7 +15,7 @@ headers = {
     "Referer": "https://admin.ambition.guru/",
     "X-Requested-With": "XMLHttpRequest",
     "Origin": "https://admin.ambition.guru",
-    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYzEzNWZlYTZkY2ZlZjIyYWRkOTZhYjI3MWIyNjdiZWMwM2QyZTcwYjc5M2UxNTVjZmJiZWY1ODcxY2U3ODEwZWY0NmExZjU3OGVlN2EyNjYiLCJpYXQiOjE3MzEyMjA5OTEuMjkzODU3LCJuYmYiOjE3MzEyMjA5OTEuMjkzODYsImV4cCI6MTczMTgyNTc5MS4yODc2MzcsInN1YiI6IjM3MiIsInNjb3BlcyI6WyJhZG1pbiJdfQ.qTo4dHn_mDxwheH_oTqqnq4rpSZuuCmRqnHIQ28QmYTH01E43OWVhU9ojIucOU6eYscHtZtjoNj-yfivBZBE4PTy6z0LevxJu_Y-xFE9X_rTHxh20wTITXVEbX6RuN1NLxsL9U_LJv65Wonfe-OSHq0i3AL3cbnfw3QUl17TFUy95FCWu8uFuiEfpTdGGbA0rCnwg__9WheuVyepV0CmaaMyy1BBEs1FJ6WY9TzmB6nPjVyZSxgUK4ASGYJW9CcwsFpUmC2A14ErFiEH7qOdbZrggE2_22x0VNzeeaM7PVVX9YBi2Z2LDF0avM8jN_xqcSUijqtufI_5D_Hp02mRETEkRhXLZVMHybH4QWK0hVDkbK9XyjDSZc_JzqslCVZbsibZUcvc-pHyVHK-5D-i1uA5pMSuS72SAPKMYlVqmIQ0H0fkkBoLJPWy4rV1jJGokZPdfWzh-8DCFhHu6JqHAb-zJKnYhpR4ZmKO3ISekFMoihmfnC2yZazvVMhugkhJlKJYdvRVK03fbeudLPDQslyidRkUmiD8ibOxBry_rhxLWymgBewZAKn8zQnZnePoPdiw_wV3hm20Z-tAv3Mio6v1PFBrR9IVuhIuALw649LOdkKFmru6Pz16S3BKSXQZKvOQHwbqoY0IPAJm8DXcGjwWkOmqE9Sh-vo6FosEJBY",  # Replace with your actual token
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYmYyOGE1N2NjZDk2YmRjMWEwN2M3YWRmYTM4OWFlMTI4MWVhOTc1YjQxY2Q0Mjc4MmRiMDQ1ZDJlZGUwMzFlNTI2YmU0NWIwZGI1ZjQzZGUiLCJpYXQiOjE3MzE5MTc0NjAuNzcxMzMzLCJuYmYiOjE3MzE5MTc0NjAuNzcxMzM2LCJleHAiOjE3MzI1MjIyNjAuNzY0NzM4LCJzdWIiOiI4MSIsInNjb3BlcyI6WyJhZG1pbiJdfQ.e2dIHA3ZotS9m8YmJXBW0MpjLz6v5amC3rHxk6wIOUhlSJcby8SuGQj2WdpUFO7bZ42zkFK-VNAWGmp1_HhjoFVWtkFjXDDoxNb8yxCipntL6gZMx2WztkROaH6Jj1-ltnzs70F_hwMtY4pdi3iHOQsoO6xJJ0eJJ_QNdASsNOf352HAFkECmUIINvAE9kibOW6eHe159bpf2SmVsPHrKsgwieT849_vIwYlwtOTEg-yua3tyn5z5YnKM2qvCWzRKGeKLCRmUZKxEiIqSkEjfVPuGxc1FuZVVc73jja4jNhzvjfIA28ayb_SJjRQWiFjHmqmLGnK9Euxhn1i5hu0Aji_vuirFhx5WuVUpO3TbOk_B-djiLzqfm5MZDZH1TLd87IzcHldxrc5j8XyzgEqSX1eDFmUg84mf8qSCi1eNj8M3ZVRpNoc5Ku6hoiwEq85rRM-7elIvujkr3CcBV8PWknYn9kCi7pgam4XkR1ZzbOO_hi9XO3WwP8S1J_6CK8KKtRHsJBXhnGBd0TNPI_XCGLeZDtsPn6gml8gx0Ewvb3BYgmpE49LeBZcyWe7oTkW_AE6rLDBYHI0lPIcVTHj9n5da5xNZJ3eya7mOE5fnnQFfvoDf2OAI9fyRwRjwxEwFmZ2zmCRxzDkF9JN3OpRTKPyrQP3rR7Hbzt1w3CiSGI",
     "Connection": "keep-alive",
     "Priority": "u=0"
 }
@@ -24,6 +25,10 @@ current_datetime = datetime.now()
 registration_deadline = (current_datetime - timedelta(minutes=5)).strftime("%Y-%m-%d %H:%M:%S")
 start_time = (current_datetime + timedelta(minutes=1.5)).strftime("%Y-%m-%d %H:%M:%S")
 published_at = (current_datetime + timedelta(minutes=10)).strftime("%Y-%m-%d %H:%M:%S")
+#user_title = f"Mock Test {current_datetime.strftime('%Y-%m-%d')}"
+
+print("Mock Test is:: ",user_title),
+
 
 data_create_exam = {
     "guard_name": "admin-api",
@@ -167,7 +172,7 @@ data_create_exam = {
     ],
 
 
-    "exam_reminders": [10],
+    "exam_reminders": [11],
     "rewards": [{"position": 1, "prize": 5000}],
     "is_routine": False,
     "criteria_fields": [],
@@ -179,7 +184,7 @@ data_create_exam = {
     "packages": [22],
     "showPackageform": False,
     "exam_threshold_id": 2,
-   # "title": "Mock Test Testing",
+#"title": "Mock Test ",
   #  "sub_title": "Mock Test Testing",
     "number_of_participant": "50",
     "points": "100",
@@ -203,10 +208,16 @@ data_create_exam = {
 # Send the request to create the exam
 response_create_exam = requests.post(url_create_exam, headers=headers, json=data_create_exam)
 
-# Check if the exam creation was successful
 if response_create_exam.status_code == 201:
     exam_id = response_create_exam.json().get('data', {}).get('id')
     print("Exam Created Successfully. Exam ID:", exam_id)
+
+    # Construct the URL to open
+    exam_url = f"https://admin.ambition.guru/exams/mock-test-detail/{exam_id}?routeName=Exams"
+
+    # Open the URL in Firefox
+    print(f"Opening exam URL: {exam_url}")
+    webbrowser.get("firefox").open(exam_url)
 
     # Lock the questions for the created exam
     url_lock_questions = f"https://api-adm.ambition.guru/api/v1/admin/exams/{exam_id}/lock-questions"

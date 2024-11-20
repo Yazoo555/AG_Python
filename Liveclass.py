@@ -1,7 +1,11 @@
 import requests
 from datetime import datetime
+import webbrowser
 
-url = "https://api-adm.ambition.guru/api/v1/admin/meeting"
+# Prompt the user for the live class title
+user_title = input("Please enter the title for the live class: ")
+
+url_create_meeting = "https://api-adm.ambition.guru/api/v1/admin/meeting"
 
 headers = {
     "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:132.0) Gecko/20100101 Firefox/132.0",
@@ -12,10 +16,7 @@ headers = {
     "Referer": "https://admin.ambition.guru/",
     "X-Requested-With": "XMLHttpRequest",
     "Origin": "https://admin.ambition.guru",
-    "Sec-Fetch-Dest": "empty",
-    "Sec-Fetch-Mode": "cors",
-    "Sec-Fetch-Site": "same-site",
-    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYzEzNWZlYTZkY2ZlZjIyYWRkOTZhYjI3MWIyNjdiZWMwM2QyZTcwYjc5M2UxNTVjZmJiZWY1ODcxY2U3ODEwZWY0NmExZjU3OGVlN2EyNjYiLCJpYXQiOjE3MzEyMjA5OTEuMjkzODU3LCJuYmYiOjE3MzEyMjA5OTEuMjkzODYsImV4cCI6MTczMTgyNTc5MS4yODc2MzcsInN1YiI6IjM3MiIsInNjb3BlcyI6WyJhZG1pbiJdfQ.qTo4dHn_mDxwheH_oTqqnq4rpSZuuCmRqnHIQ28QmYTH01E43OWVhU9ojIucOU6eYscHtZtjoNj-yfivBZBE4PTy6z0LevxJu_Y-xFE9X_rTHxh20wTITXVEbX6RuN1NLxsL9U_LJv65Wonfe-OSHq0i3AL3cbnfw3QUl17TFUy95FCWu8uFuiEfpTdGGbA0rCnwg__9WheuVyepV0CmaaMyy1BBEs1FJ6WY9TzmB6nPjVyZSxgUK4ASGYJW9CcwsFpUmC2A14ErFiEH7qOdbZrggE2_22x0VNzeeaM7PVVX9YBi2Z2LDF0avM8jN_xqcSUijqtufI_5D_Hp02mRETEkRhXLZVMHybH4QWK0hVDkbK9XyjDSZc_JzqslCVZbsibZUcvc-pHyVHK-5D-i1uA5pMSuS72SAPKMYlVqmIQ0H0fkkBoLJPWy4rV1jJGokZPdfWzh-8DCFhHu6JqHAb-zJKnYhpR4ZmKO3ISekFMoihmfnC2yZazvVMhugkhJlKJYdvRVK03fbeudLPDQslyidRkUmiD8ibOxBry_rhxLWymgBewZAKn8zQnZnePoPdiw_wV3hm20Z-tAv3Mio6v1PFBrR9IVuhIuALw649LOdkKFmru6Pz16S3BKSXQZKvOQHwbqoY0IPAJm8DXcGjwWkOmqE9Sh-vo6FosEJBY",  # Replace with your actual token
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYmYyOGE1N2NjZDk2YmRjMWEwN2M3YWRmYTM4OWFlMTI4MWVhOTc1YjQxY2Q0Mjc4MmRiMDQ1ZDJlZGUwMzFlNTI2YmU0NWIwZGI1ZjQzZGUiLCJpYXQiOjE3MzE5MTc0NjAuNzcxMzMzLCJuYmYiOjE3MzE5MTc0NjAuNzcxMzM2LCJleHAiOjE3MzI1MjIyNjAuNzY0NzM4LCJzdWIiOiI4MSIsInNjb3BlcyI6WyJhZG1pbiJdfQ.e2dIHA3ZotS9m8YmJXBW0MpjLz6v5amC3rHxk6wIOUhlSJcby8SuGQj2WdpUFO7bZ42zkFK-VNAWGmp1_HhjoFVWtkFjXDDoxNb8yxCipntL6gZMx2WztkROaH6Jj1-ltnzs70F_hwMtY4pdi3iHOQsoO6xJJ0eJJ_QNdASsNOf352HAFkECmUIINvAE9kibOW6eHe159bpf2SmVsPHrKsgwieT849_vIwYlwtOTEg-yua3tyn5z5YnKM2qvCWzRKGeKLCRmUZKxEiIqSkEjfVPuGxc1FuZVVc73jja4jNhzvjfIA28ayb_SJjRQWiFjHmqmLGnK9Euxhn1i5hu0Aji_vuirFhx5WuVUpO3TbOk_B-djiLzqfm5MZDZH1TLd87IzcHldxrc5j8XyzgEqSX1eDFmUg84mf8qSCi1eNj8M3ZVRpNoc5Ku6hoiwEq85rRM-7elIvujkr3CcBV8PWknYn9kCi7pgam4XkR1ZzbOO_hi9XO3WwP8S1J_6CK8KKtRHsJBXhnGBd0TNPI_XCGLeZDtsPn6gml8gx0Ewvb3BYgmpE49LeBZcyWe7oTkW_AE6rLDBYHI0lPIcVTHj9n5da5xNZJ3eya7mOE5fnnQFfvoDf2OAI9fyRwRjwxEwFmZ2zmCRxzDkF9JN3OpRTKPyrQP3rR7Hbzt1w3CiSGI",
     "Connection": "keep-alive",
     "Priority": "u=0"
 }
@@ -25,14 +26,11 @@ current_datetime = datetime.now()
 start_date = current_datetime.strftime("%Y-%m-%d")  # Current date in "YYYY-MM-DD" format
 start_time = current_datetime.strftime("%Y-%m-%d %H:%M")  # Current date and time in "YYYY-MM-DD HH:MM" format
 
-# Get dynamic title from user
-dynamic_title = input(f"Please enter the title for the exam ({start_date}): ")
-
-data = {
-    "type": 2,
+data_create_meeting = {
+    "type": 3,
     "password": "",
-    "start_time": start_time,  # Use dynamic start time here
-    "date": start_date,        # Add dynamic date here if required
+    "start_time": start_time,
+    "date": start_date,
     "duration": 60,
     "contact_email": "ambitionguru2022@gmail.com",
     "join_before_host": False,
@@ -43,15 +41,15 @@ data = {
     "all_package": 0,
     "is_free": 0,
     "payable_type": 1,
-    "topic": dynamic_title,            # Use dynamic title in topic
-    "app_title": dynamic_title,         # Use dynamic title in app title
-    "app_sub_title": dynamic_title,     # Use dynamic title in app subtitle
-    "tags": [dynamic_title],
+    "topic": user_title,            # Dynamic title for topic
+    "app_title": user_title,         # Dynamic title for app title
+    "app_sub_title": user_title,     # Dynamic title for app subtitle
+    "tags": [user_title],
     "guru_org_id": 304,
     "meeting_type": 1,
     "remainder_template_id": [8],
     "live_class_account_ids": [10],
-    "description": dynamic_title,
+    "description": user_title,       # Dynamic description
     "media_id": 1109946,
     "studio_id": 7,
     "chapter_meeting": [{
@@ -64,18 +62,45 @@ data = {
     }]
 }
 
-# Send the POST request
-response = requests.post(url, headers=headers, json=data)
+# Step 1: Create the live class
+response_create_meeting = requests.post(url_create_meeting, headers=headers, json=data_create_meeting)
 
-# Print response status and content with error handling
-print("Status Code:", response.status_code)
-try:
-    print("Response JSON:", response.json())
-except requests.exceptions.JSONDecodeError:
-    print("Failed to parse JSON. Response content:", response.text)
-
-# Additional Success Message (based on status code check)
-if response.status_code == 200:
+if response_create_meeting.status_code == 201:
     print("Successfully created Live Class!")
+    response_data = response_create_meeting.json()
+    
+    # Extract the meeting ID
+    meeting_id = response_data.get('data', {}).get('id')
+    print(f"Meeting ID: {meeting_id}")
+    
+    if meeting_id:
+        # Construct the URL for the meeting details
+        detail_url = f"https://admin.ambition.guru/meeting/{meeting_id}/students"
+        print(f"Opening Live Class URL: {detail_url}")
+        
+        # Open the Live Class URL in Firefox or the default browser
+        webbrowser.get("firefox").open(detail_url)
+        
+        # Step 2: Update the meeting status
+        update_status_url = f"https://api-adm.ambition.guru/api/v1/admin/meeting/{meeting_id}/update-status"
+        
+        # Set the status dynamically (e.g., 1 for active, 0 for inactive)
+        status = int(input("Enter the status for the live class (1 for active, 0 for inactive): "))
+        data_update_status = {
+            "status": status
+        }
+        
+        response_update_status = requests.post(update_status_url, headers=headers, json=data_update_status)
+        
+        if response_update_status.status_code == 200:
+            print(f"Successfully updated status for Live Class ID: {meeting_id} to {status}")
+        else:
+            print("Failed to update status.")
+            print("Status Code:", response_update_status.status_code)
+            print("Response Content:", response_update_status.text)
+    else:
+        print("Failed to extract meeting ID.")
 else:
     print("Failed to create Live Class.")
+    print("Status Code:", response_create_meeting.status_code)
+    print("Response Content:", response_create_meeting.text)
