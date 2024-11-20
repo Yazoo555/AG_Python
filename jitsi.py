@@ -40,15 +40,15 @@ data_create_meeting = {
     "all_package": 0,
     "is_free": 1,
     "payable_type": 1,
-    "live_class_account_ids": [8],
-    "topic": user_title,
-    "app_title": user_title,
-    "app_sub_title": user_title,
+    "live_class_account_ids": [11],
+    "topic": user_title,            # Dynamic title for topic
+    "app_title": user_title,        # Dynamic title for app title
+    "app_sub_title": user_title,    # Dynamic title for app subtitle
     "tags": [user_title],
     "guru_org_id": 304,
     "meeting_type": 1,
     "remainder_template_id": [6],
-    "description": user_title,
+    "description": user_title,      # Dynamic description
     "media_id": 1125982,
     "studio_id": 3,
     "chapter_meeting": [{

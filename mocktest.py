@@ -23,7 +23,7 @@ headers = {
 # Get the current date and time and calculate dynamic fields
 current_datetime = datetime.now()
 registration_deadline = (current_datetime - timedelta(minutes=5)).strftime("%Y-%m-%d %H:%M:%S")
-start_time = (current_datetime + timedelta(minutes=1.5)).strftime("%Y-%m-%d %H:%M:%S")
+start_time = (current_datetime + timedelta(minutes=2.5)).strftime("%Y-%m-%d %H:%M:%S")
 published_at = (current_datetime + timedelta(minutes=10)).strftime("%Y-%m-%d %H:%M:%S")
 #user_title = f"Mock Test {current_datetime.strftime('%Y-%m-%d')}"
 
