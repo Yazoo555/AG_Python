@@ -26,6 +26,30 @@ current_datetime = datetime.now()
 start_date = current_datetime.strftime("%Y-%m-%d")  # Current date in "YYYY-MM-DD" format
 start_time = current_datetime.strftime("%Y-%m-%d %H:%M")  # Current date and time in "YYYY-MM-DD HH:MM" format
 
+# Map of available Zoom accounts
+accounts = {
+    37: {"name": "ISV Zoom Account 1 - 500", "participant_limit": 500},
+    20: {"name": "Zoom Account - (Science2 - niraj@yajtechnologies.com)", "participant_limit": 3000},
+    10: {"name": "Zoom Account - 7 (Aqhter)", "participant_limit": 500},
+    7: {"name": "Zoom Account - 6 (Prashant)", "participant_limit": 500}
+}
+
+# Ask user to select an account or default to ID 10
+print("Available Zoom Accounts:")
+for account_id, account_info in accounts.items():
+    print(f"{account_id}: {account_info['name']} (Participant Limit: {account_info['participant_limit']})")
+
+selected_account = input("Enter the ID of the Zoom account to use (default is 10): ")
+
+# Validate and set account ID
+try:
+    live_class_account_id = int(selected_account)
+    if live_class_account_id not in accounts:
+        raise ValueError("Invalid ID")
+except (ValueError, TypeError):
+    print("Invalid or no input. Defaulting to account ID 10.")
+    live_class_account_id = 10
+
 data_create_meeting = {
     "type": 2,
     "password": "",
@@ -35,12 +59,12 @@ data_create_meeting = {
     "join_before_host": True,
     "formType": "add",
     "content_display_category_id": None,
-    "channel": "jitsi_ag",
+    "channel": "zoom",
     "audios": [],
     "all_package": 0,
     "is_free": 1,
     "payable_type": 1,
-    "live_class_account_ids": [8],
+    "live_class_account_ids": [live_class_account_id],
     "topic": user_title,
     "app_title": user_title,
     "app_sub_title": user_title,

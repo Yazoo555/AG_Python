@@ -29,11 +29,21 @@ published_at = (current_datetime + timedelta(minutes=10)).strftime("%Y-%m-%d %H:
 
 print("Mock Test is:: ",user_title),
 
+# Prompt user for allowing answer changes
+try:
+    allow_answer_change = int(input("Allow answer change? Enter 1 for Yes, 0 for No (default is 1): "))
+    if allow_answer_change not in [0, 1]:
+        raise ValueError("Invalid input")
+except (ValueError, TypeError):
+    print("Invalid or no input. Defaulting to allow answer change.")
+    allow_answer_change = 1
+
+
 
 data_create_exam = {
     "guard_name": "admin-api",
     "join_in_middle": 1,
-    "allow_answer_change": 1,
+    "allow_answer_change": allow_answer_change,  # Dynamic allow answer change
     "send_notification": 0,
     "is_featured": 0,
     "is_criteria": 0,
