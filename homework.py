@@ -40,128 +40,38 @@ data_create_homework = {
     "negative_marking": 0,
     "start_time": start_time,
     "end_time": end_time,
-    "questions": [
-        {
-            "body": "<p>Two wire loops of different radii are placed in a plane such that they are concentric. The current in outer loop is clockwise and increasing with time. The current in the inner loop is</p>",
-            "id": 1820,
-            "order": 1,
-            "marks": 1
-        },
-        {
-            "body": "<p>Whenever there is a change in magnetic flux linked with a circuit, an emf is induced which is proportional to the rate of change of magnetic flux linked with the circuit. This law is called :</p>",
-            "id": 4541,
-            "order": 2,
-            "marks": 1
-        },
-        {
-            "body": "<p>Faraday's law of electromagnetic induction states that induced emf in a circuit is :</p>",
-            "id": 4548,
-            "order": 3,
-            "marks": 1
-        },
-        {
-            "body": "<p>The direction of the induced current in a circuit is always such that it opposes the cause due to which it is produced. This law is named as :</p>",
-            "id": 4551,
-            "order": 4,
-            "marks": 1
-        },
-        {
-            "body": "<p>Lenz's law gives </p>",
-            "id": 4553,
-            "order": 5,
-            "marks": 1
-        },
-        {
-            "body": "<p>Lenz's law is a consequence of the law of conservation of</p>",
-            "id": 4556,
-            "order": 6,
-            "marks": 1
-        },
-        {
-            "body": "<p>When a magnet is removed with its N-pole towards a closed coil, the nearer end of the coil acts as :</p>",
-            "id": 4559,
-            "order": 7,
-            "marks": 1
-        },
-        {
-            "body": "<p>A magnet is moved towards a coil (A) quickly (B) slowly. Then the induced emf is :</p>",
-            "id": 4564,
-            "order": 8,
-            "marks": 1
-        },
-        {
-            "body": "<p>Whenever a magnet is moved either towards or away from a conducting coil, an emf is induced; the magnitude of which is independent of :</p>",
-            "id": 4568,
-            "order": 9,
-            "marks": 1
-        },
-        {
-            "body": "<p>The self inductance of a coil is a measure of :</p>",
-            "id": 4571,
-            "order": 10,
-            "marks": 1
-        },
-        {
-            "body": "<p>The unit of inductance is </p>",
-            "id": 4572,
-            "order": 11,
-            "marks": 1
-        },
-        {
-            "body": "<p>Two pure inductors each of self-inductance L are connected in series, the net inductance is :</p>",
-            "id": 4575,
-            "order": 12,
-            "marks": 1
-        },
-        {
-            "body": "<p>An inductor coil of inductance L is divided into two equal parts and both parts are connected in parallel. The net inductance is</p>",
-            "id": 4584,
-            "order": 13,
-            "marks": 1
-        },
-        {
-            "body": "<p>When a wire loop is rotated in a magnetic field, the direction of induced emf changes once in every :</p>",
-            "id": 4588,
-            "order": 14,
-            "marks": 1
-        },
-        {
-            "body": "<p>Self-inductance of a coil varies as :</p>",
-            "id": 4592,
-            "order": 15,
-            "marks": 1
-        },
-        {
-            "body": "<p>The self-inductance of a straight wire is :</p>",
-            "id": 4599,
-            "order": 16,
-            "marks": 1
-        },
-        {
-            "body": "<p>In a resistance box, the resistance coil is doubled on itself to avoid :</p>",
-            "id": 4601,
-            "order": 17,
-            "marks": 1
-        },
-        {
-            "body": "<p>Eddy currents are:</p>",
-            "id": 4607,
-            "order": 18,
-            "marks": 1
-        },
-        {
-            "body": "<p>Why the current does not rise immediately in a circuit containing inductance :</p>",
-            "id": 4610,
-            "order": 19,
-            "marks": 1
-        },
-        {
-            "body": "<p>To induce emf in a coil, the magnetic flux linking :</p>",
-            "id": 4612,
-            "order": 20,
-            "marks": 1
-        }
-    ],
+     "questions": [
+    {
+        "body": "<p>अध्यापन अनुमति पत्रको अवधारणा प्रस्तुत गर्दै यसको आवश्यकता दर्साउनुहोस्। साथै नेपालमा अध्यापन अनुमति पत्रको सम्बन्धमा देखिएका समस्याहरू उल्लेख गर्नुहोस् । (२+४+४)</p>",
+        "id": 115905,
+        "order": 1,
+        "marks": 1
+    },
+    {
+        "body": "<p>शिक्षक भर्ना भनेको के हो ? नेपालमा शिक्षक भर्ना छनौट तथा नियुक्तिमा देखिएका समस्याहरू लेख्नुहोस् । (१+४)</p>",
+        "id": 115904,
+        "order": 2,
+        "marks": 1
+    },
+    {
+        "body": "<p>शिक्षक बढुवा भनेको के हो ? यसका उद्देश्यहरू उल्लेख गर्नुहोस् । (२+३)</p>",
+        "id": 115903,
+        "order": 3,
+        "marks": 1
+    },
+    {
+        "body": "<p>नेपालमा शिक्षकको पेसागत विकासको सम्बन्धमा भएका नीतिगत, संरचनागत एवम् कार्यक्रमगत प्रावधानहरूको चर्चा गर्नुहोस् ।</p>",
+        "id": 115902,
+        "order": 4,
+        "marks": 1
+    },
+    {
+        "body": "<p>शिक्षकको गुणस्तर एवम् प्रभावकारिताको बारेमा छोटकरीमा चर्चा गर्नुहोस् ।(२.५+२.५)</p>",
+        "id": 115901,
+        "order": 5,
+        "marks": 1
+    }
+],
     "exam_reminders": [],
     "rewards": [{"position": 1, "prize": 5000}],
     "is_routine": False,
