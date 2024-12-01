@@ -24,8 +24,14 @@ headers = {
 current_datetime = datetime.now()
 registration_deadline = (current_datetime + timedelta(minutes=2)).strftime("%Y-%m-%d %H:%M:%S")
 start_time = (current_datetime + timedelta(minutes=2)).strftime("%Y-%m-%d %H:%M:%S")  # 5 + 3 minutes
-published_at = (current_datetime + timedelta(minutes=10)).strftime("%Y-%m-%d %H:%M:%S")  # 8 + 10 minutes
-#user_title = f"Mock Test {current_datetime.strftime('%Y-%m-%d')}"
+
+try:
+    duration = int(input("Enter the duration of the exam in minutes (default is 45): "))
+except ValueError:
+    print("Invalid or no input. Defaulting to 45 minutes.")
+    duration = 45
+
+published_at = (current_datetime + timedelta(minutes=2 + duration)).strftime("%Y-%m-%d %H:%M:%S")
 
 print("Mock Test is:: ",user_title),
 
@@ -52,8 +58,8 @@ data_create_exam = {
     "is_free": 1,
     "price": 0,
     "exam_setup_type": 1,
-    "marks": "50",
-    "duration": "45",
+    "marks": 20,
+    "duration": str(duration),
     "negative_marking": "1",
     "start_time": start_time,
     "registration_deadline": registration_deadline,

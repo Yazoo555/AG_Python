@@ -28,7 +28,7 @@ start_time = current_datetime.strftime("%Y-%m-%d %H:%M")  # Current date and tim
 
 # Map of available accounts
 accounts = {
-    11: {"name": "Guru Meet - 3 (DO)", "email": "prashant@ambition.guru"},
+    11: {"name": "Guru Meet - 3 (DO)","email": "prashant@ambition.guru"},
     8: {"name": "Guru Meet - 2 (Jitsi)", "email": "suman@ambition.guru"},
     6: {"name": "Guru Meet - 1", "email": "niraj@ambition.guru"}
 }
