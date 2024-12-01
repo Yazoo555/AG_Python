@@ -12,7 +12,7 @@ user_title = input("Please enter the title for the Homework: ")
 # Dynamic timestamps for the homework
 current_datetime = datetime.now()
 start_time = (current_datetime).strftime("%Y-%m-%d %H:%M:%S")
-end_time = (current_datetime + timedelta(minutes=10)).strftime("%Y-%m-%d %H:%M:%S")
+end_time = (current_datetime + timedelta(days=2)).strftime("%Y-%m-%d %H:%M:%S")
 
 # Headers for API request
 headers = {
@@ -36,7 +36,7 @@ data_create_homework = {
     "price": 0,
     "exam_setup_type": 1,
     "marks": 10,
-    "duration": 10,
+   # "duration": 10,
     "negative_marking": 0,
     "start_time": start_time,
     "end_time": end_time,
