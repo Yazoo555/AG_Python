@@ -16,7 +16,7 @@ headers = {
     "Referer": "https://admin.ambition.guru/",
     "X-Requested-With": "XMLHttpRequest",
     "Origin": "https://admin.ambition.guru",
-    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNzBiMjdkZDExYjYxMGU5NjQyNjAxYWU4N2M5YzUxNDM5NDA1OGYxZGExMWU5ZmY2MjU1OTk5ZTViZmY1OWQ3MDBlN2ExMWFkYTFiMzcwMDciLCJpYXQiOjE3MzI0Mzk5OTguODU4NzI4LCJuYmYiOjE3MzI0Mzk5OTguODU4NzMxLCJleHAiOjE3MzMwNDQ3OTguODUxOTU1LCJzdWIiOiIzNzIiLCJzY29wZXMiOlsiYWRtaW4iXX0.MIW1SXCmJHeg1bvc0jo2sk1rG_ifZ2ZedxNjk1yGj9XvvEmw9M0eXtPvyM6-xLy8SsgHs1JvwH-gpdYik2NShsU0hYbaPbXfdES-cOAtOsCwfYRTPy_U4BcOjidA0DltaHvQW-sH7gkKhWwpzJuYzpuJYFZIbfXEKPMy9u8PTXHc7Bcocde4Noy12LBmECJ8Dgyh02GhRTn4SfsV7jEViajJpFfafB3pqr3TMdD6WgFhb86-EzT6aicc_rx-hZ6Cu1uF_LLypesnOU60rSZruiJX8Gc5Z7B7L9tAZdCcOlAJJDt6vIhTRoBIi0hsO7uuCuLehuGR2ti08cSiOMtBEuCpm7SayukRstBy6cO1ByJapsgWXRMimhG1yGpZRcZUXmvp4uduCOF8K68SBPn11Mobw-i3Zdyo71vmTbK_LEkK2If2dIb2ch_LE659-wlS3L-F55S5p8Z75Ogh4neNQOHbeBWuIGZht5JxzY-jJcxZExKc7RQy2zBCUPaCMIGXIceOkERVN0HJ-6ytISZ45imt0fsYv07ybL7PnJY7k55c-rKv4ykhLH8iCu8RL0pd46m4C_LkMVqTZfDhebSBFH9WQlfrRnjlZPMn9ksSOQWTh7Dr-KDdsE7LKBTXdjp_9DdLiZ6x5UBfODOQYAukk382XpGSkcMtpwsbBJd3Zok",
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYmUyYmRkMGQ2NDZlNmVmMzczYTBhOTU2NDIzMzk4ZWQ1M2Q3YmNlM2E3YTMyNDhiMTlkYWNkMDg1Y2ZjZWQzZTk5NWM2NzdiYjEyNjVlZTEiLCJpYXQiOjE3MzI5NDQwMjAuNDQxOTk0LCJuYmYiOjE3MzI5NDQwMjAuNDQxOTk3LCJleHAiOjE3MzM1NDg4MjAuNDM0OSwic3ViIjoiMzcyIiwic2NvcGVzIjpbImFkbWluIl19.MPIA2fBwHbByQydPL4kocTemdmR96Tmi8TXCR6h8dSRaDLU1ztksMN1vSft2xvxDCvvP6x4O7dfsqZe9VRzQZjHBMZ0nOVU6tIpd7bDVEx56ZXnyWpHk13Uq1I8cmIZ9UHnB382SA8kTQZmA5bMZ7nCh9tqxVa34utTYKqpz6b9rSVY9EHC_1xCGdxvNTzdmBrryO0LZ3mMHNFq9Iwi3UC7xcJNksMQ61CkwCpZ620eMZmqG9SusNOunBd3Wigxd3spl8vm6cVAieANOoqK2xL4GieoF4es9bkEZoJFcenVQoBCs6o9tDkYPZ6z4REZ18ovNOu4ki22gjdhotHl4JGHHps8yjhDmunHpTDIyTrD_3-HEm0YMCIhhJgo7Z9ZtZzQu-rVGWgfbUr2vXB-XrgcSwP91IAqEFpWKTu38Wl-FzXO4ZGyaOKGt86-8rtHUETk_gyRunRg_RQmhmXYEZ4qJEqtNlFO-Xwh-se5m1UA8pVHZxz6Krc22lSSWvXMC5fKtNh5IbRVCF8xwkmdkpSFHoB7el53Fj03Ij1cqAgEBzXe31ccYX49_F0entdVgEimyhtIhX6yAqEL7VXLh1tofudj90RNWnLtOyCLhJrii-t4NbfysAv-W_tONlDJuOh7HJ1dSwdKK8dR76bpoitMVWU_ifYvrfDdBgd8KtJc",
     "Connection": "keep-alive",
     "Priority": "u=0"
 }
@@ -28,10 +28,26 @@ start_time = current_datetime.strftime("%Y-%m-%d %H:%M")  # Current date and tim
 
 # Map of available Zoom accounts
 accounts = {
-    37: {"name": "ISV Zoom Account 1 - 500", "participant_limit": 500},
-    20: {"name": "Zoom Account - (Science2 - niraj@yajtechnologies.com)", "participant_limit": 3000},
-    10: {"name": "Zoom Account - 7 (Aqhter)", "participant_limit": 500},
-    7: {"name": "Zoom Account - 6 (Prashant)", "participant_limit": 500}
+#     37: {"name": "ISV Zoom Account 1 - 500", "participant_limit": 500},
+#     20: {"name": "Zoom Account - (Science2 - niraj@yajtechnologies.com)", "participant_limit": 3000},
+#     10: {"name": "Zoom Account - 7 (Aqhter)", "participant_limit": 500},
+#    49: {"name": "ISV Zoom Account 13 - 3000"},
+#      7: {"name": "Zoom Account - 6 (Prashant)", "participant_limit": 500},
+     
+37: {"name": "ISV Zoom Account 1 - 500", "participant_limit": 500},
+38: {"name": "ISV Zoom Account 2 - 500", "participant_limit": 500},
+39: {"name": "ISV Zoom Account 3 - 500", "participant_limit": 500},
+40: {"name": "ISV Zoom Account 4 - 500", "participant_limit": 500},
+41: {"name": "ISV Zoom Account 5 - 500", "participant_limit": 500},
+42: {"name": "ISV Zoom Account 6 - 500", "participant_limit": 500},
+43: {"name": "ISV Zoom Account 7 - 1000", "participant_limit": 1000},
+44: {"name": "ISV Zoom Account 8 - 1000", "participant_limit": 1000},
+45: {"name": "ISV Zoom Account 9 - 1000", "participant_limit": 1000},
+46: {"name": "ISV Zoom Account 10 - 1000", "participant_limit": 1000},
+47: {"name": "ISV Zoom Account 11 - 3000", "participant_limit": 3000},
+48: {"name": "ISV Zoom Account 12 - 3000", "participant_limit": 3000},
+49: {"name": "ISV Zoom Account 13 - 3000", "participant_limit": 3000}
+
 }
 
 # Ask user to select an account or default to ID 10
