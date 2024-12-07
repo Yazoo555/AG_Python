@@ -84,6 +84,7 @@ data_create_homework = {
     "type": "HOMEWORK",
     "locked": False,
     "setup_through": 1,
+
     "questions": [
         {
             "body": "<p>शिक्षकको गुणस्तर एवम् प्रभावकारिताको बारेमा छोटकरीमा चर्चा गर्नुहोस् ।(२.५+२.५)</p>",
@@ -277,7 +278,73 @@ data_create_homework = {
         },
         "section_id": None
     },
+
+    {
+        "body": "<p>शिक्षक बढुवा भनेको के हो ? यसका उद्देश्यहरू उल्लेख गर्नुहोस् । (२+३)</p>",
+        "id": 115903,
+        "order": 13,
+        "marks": 1,
+        "extras": {
+            "unit": {
+                "id": 20329,
+                "name": "Feedback Session",
+                "type": "Unit",
+                "marks": 1,
+                "parent_id": 19893,
+                "thumbnail": None,
+                "children_count": 1,
+                "ancestors_and_self": [
+                    {
+                        "id": 20329,
+                        "name": "Feedback Session",
+                        "path": "20329",
+                        "rank": 0,
+                        "type": "Unit",
+                        "depth": 0,
+                        "marks": 1
+                    },
+                    {
+                        "id": 19893,
+                        "name": "Mental Agility Test (MAT)",
+                        "path": "20329.19893",
+                        "rank": 0,
+                        "type": "Subject",
+                        "depth": -1,
+                        "marks": 80
+                    }
+                ]
+            },
+            "chapter": {
+                "id": 20330,
+                "name": "Feedback Session",
+                "type": "Chapter",
+                "marks": 1,
+                "parent_id": 20329
+            },
+            "subject": {
+                "id": 19893,
+                "name": "Mental Agility Test (MAT)",
+                "type": "Subject",
+                "course": {
+                    "id": 150,
+                    "name": "CEE NewCourse",
+                    "rank": 0,
+                    "type": "ACADEMIC",
+                    "status": 1,
+                    "created_at": "2024-05-02T08:32:21.000000Z",
+                    "category_id": 27
+                },
+                "course_id": 150,
+                "parent_id": None,
+                "hasChildren": True,
+                "hasCustomSyllabus": False
+            },
+            "subject_type": "Subject"
+        },
+        "section_id": None
+    },
     ]
+
 }
 
 
