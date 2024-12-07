@@ -5,7 +5,9 @@ import webbrowser
 # Prompt the user for the live class title
 user_title = input("Please enter the title for the live class: ")
 
+
 url_create_meeting = "https://api-adm.ambition.guru/api/v1/admin/meeting"
+
 
 headers = {
     "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:132.0) Gecko/20100101 Firefox/132.0",
@@ -27,33 +29,32 @@ start_date = current_datetime.strftime("%Y-%m-%d")  # Current date in "YYYY-MM-D
 start_time = current_datetime.strftime("%Y-%m-%d %H:%M")  # Current date and time in "YYYY-MM-DD HH:MM" format
 
 # Map of available Zoom accounts
-accounts = {
-#     37: {"name": "ISV Zoom Account 1 - 500", "participant_limit": 500},
-#     20: {"name": "Zoom Account - (Science2 - niraj@yajtechnologies.com)", "participant_limit": 3000},
-#     10: {"name": "Zoom Account - 7 (Aqhter)", "participant_limit": 500},
-#    49: {"name": "ISV Zoom Account 13 - 3000"},
-#      7: {"name": "Zoom Account - 6 (Prashant)", "participant_limit": 500},
-     
-37: {"name": "ISV Zoom Account 1 - 500", "participant_limit": 500},
-38: {"name": "ISV Zoom Account 2 - 500", "participant_limit": 500},
-39: {"name": "ISV Zoom Account 3 - 500", "participant_limit": 500},
-40: {"name": "ISV Zoom Account 4 - 500", "participant_limit": 500},
-41: {"name": "ISV Zoom Account 5 - 500", "participant_limit": 500},
-42: {"name": "ISV Zoom Account 6 - 500", "participant_limit": 500},
-43: {"name": "ISV Zoom Account 7 - 1000", "participant_limit": 1000},
-44: {"name": "ISV Zoom Account 8 - 1000", "participant_limit": 1000},
-45: {"name": "ISV Zoom Account 9 - 1000", "participant_limit": 1000},
-46: {"name": "ISV Zoom Account 10 - 1000", "participant_limit": 1000},
-47: {"name": "ISV Zoom Account 11 - 3000", "participant_limit": 3000},
-48: {"name": "ISV Zoom Account 12 - 3000", "participant_limit": 3000},
-49: {"name": "ISV Zoom Account 13 - 3000", "participant_limit": 3000}
 
+accounts = {
+    20: {"name": "Zoom Account - (Science2 - niraj@yajtechnologies.com)", "participant_limit": 3000},
+    10: {"name": "Zoom Account - 7 (Aqhter)", "participant_limit": 500},
+    49: {"name": "ISV Zoom Account 13 - 3000", "participant_limit": 3000},
+    7: {"name": "Zoom Account - 6 (Prashant)", "participant_limit": 500},
+    37: {"name": "ISV Zoom Account 1 - 500", "participant_limit": 500},
+    38: {"name": "ISV Zoom Account 2 - 500", "participant_limit": 500},
+    39: {"name": "ISV Zoom Account 3 - 500", "participant_limit": 500},
+    40: {"name": "ISV Zoom Account 4 - 500", "participant_limit": 500},
+    41: {"name": "ISV Zoom Account 5 - 500", "participant_limit": 500},
+    42: {"name": "ISV Zoom Account 6 - 500", "participant_limit": 500},
+    43: {"name": "ISV Zoom Account 7 - 1000", "participant_limit": 1000},
+    44: {"name": "ISV Zoom Account 8 - 1000", "participant_limit": 1000},
+    45: {"name": "ISV Zoom Account 9 - 1000", "participant_limit": 1000},
+    46: {"name": "ISV Zoom Account 10 - 1000", "participant_limit": 1000},
+    47: {"name": "ISV Zoom Account 11 - 3000", "participant_limit": 3000},
+    48: {"name": "ISV Zoom Account 12 - 3000", "participant_limit": 3000}
 }
+
 
 # Ask user to select an account or default to ID 10
 print("Available Zoom Accounts:")
 for account_id, account_info in accounts.items():
     print(f"{account_id}: {account_info['name']} (Participant Limit: {account_info['participant_limit']})")
+
 
 selected_account = input("Enter the ID of the Zoom account to use (default is 10): ")
 

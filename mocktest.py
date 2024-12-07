@@ -1,7 +1,6 @@
 import requests
-from datetime import datetime, time, timedelta
+from datetime import datetime, timedelta
 import webbrowser
-
 
 url_create_exam = "https://api-adm.ambition.guru/api/v1/admin/exams"
 user_title = input("Please enter the title for the exam: ")
@@ -15,25 +14,30 @@ headers = {
     "Referer": "https://admin.ambition.guru/",
     "X-Requested-With": "XMLHttpRequest",
     "Origin": "https://admin.ambition.guru",
-    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYmUyYmRkMGQ2NDZlNmVmMzczYTBhOTU2NDIzMzk4ZWQ1M2Q3YmNlM2E3YTMyNDhiMTlkYWNkMDg1Y2ZjZWQzZTk5NWM2NzdiYjEyNjVlZTEiLCJpYXQiOjE3MzI5NDQwMjAuNDQxOTk0LCJuYmYiOjE3MzI5NDQwMjAuNDQxOTk3LCJleHAiOjE3MzM1NDg4MjAuNDM0OSwic3ViIjoiMzcyIiwic2NvcGVzIjpbImFkbWluIl19.MPIA2fBwHbByQydPL4kocTemdmR96Tmi8TXCR6h8dSRaDLU1ztksMN1vSft2xvxDCvvP6x4O7dfsqZe9VRzQZjHBMZ0nOVU6tIpd7bDVEx56ZXnyWpHk13Uq1I8cmIZ9UHnB382SA8kTQZmA5bMZ7nCh9tqxVa34utTYKqpz6b9rSVY9EHC_1xCGdxvNTzdmBrryO0LZ3mMHNFq9Iwi3UC7xcJNksMQ61CkwCpZ620eMZmqG9SusNOunBd3Wigxd3spl8vm6cVAieANOoqK2xL4GieoF4es9bkEZoJFcenVQoBCs6o9tDkYPZ6z4REZ18ovNOu4ki22gjdhotHl4JGHHps8yjhDmunHpTDIyTrD_3-HEm0YMCIhhJgo7Z9ZtZzQu-rVGWgfbUr2vXB-XrgcSwP91IAqEFpWKTu38Wl-FzXO4ZGyaOKGt86-8rtHUETk_gyRunRg_RQmhmXYEZ4qJEqtNlFO-Xwh-se5m1UA8pVHZxz6Krc22lSSWvXMC5fKtNh5IbRVCF8xwkmdkpSFHoB7el53Fj03Ij1cqAgEBzXe31ccYX49_F0entdVgEimyhtIhX6yAqEL7VXLh1tofudj90RNWnLtOyCLhJrii-t4NbfysAv-W_tONlDJuOh7HJ1dSwdKK8dR76bpoitMVWU_ifYvrfDdBgd8KtJc",
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNWQxZjc5ZGRjZjBlNWViZDU2YTllNDA3ZjNmYmE1ZjM1NjJhYTY5ZThmMzUxMjJlYTJiNzYzOWQ0Y2IwYjdhNzY3MDdjMjVlM2IzOGEwZjkiLCJpYXQiOjE3MzM1NTIxMzcuNTczMzE0LCJuYmYiOjE3MzM1NTIxMzcuNTczMzE2LCJleHAiOjE3MzQxNTY5MzcuNTY1MzA2LCJzdWIiOiIzNzIiLCJzY29wZXMiOlsiYWRtaW4iXX0.lLA6MUyrNODe85u58gT6-yjajK8d7duxB3A69CcbKgh2RZaVvHCXX8bciYlKyVCyHFdMoQIonWaZpeRTfgI9o-KOg0xjOPnj7XkS1ulNsYXh29oRupElh2IU5_CEy6IYvLCjwXlSeVol6iUKtiy8fMos6O8YGH4fVh8Z9j386zXEXPcQnyfP73YfFP02gDp-5onloZkYIcNt420jT6O5DoE7RXzLHAwGx_7NVfY1assKSjb-1h1JXv3E13g5uVRbaor4HZgZk4CWt1SNgWMw1RsWMViSa1MNu_BBb457IPpYT-xpTJvF7pYLYYX911GlNi9b81ZAnEPSVpkm-v6Xcds55jENtF8nEf2VUxlJqg7HZ-rRBGwpdaVbjQrJ7cZckj42g0bkNidAPijj21lyIbLrq3z5NYYgQwjLkFoOzdODw1bUxE8UKVMzRiVEe9Z49h1c6_EhnpjQYPDRA4y7wDVuZNzPnoTZvCHTwVIiYrOdqnSvLWcq3_0Styxk11_iNhFxs_SpBc6I_V6GbXUqn4vfLlYD19fsA1tXnXLSqA2AHBajL5Oz3QpBNQHZuQIx32P0lCjLVVoqY5wUks86XHPsM1tm3kqv03UQLOLdkPFqqvu_DtLWVPJso__oZGTRV-FtCngCPgrmi-UlaNxttbNJ7V_lviILq-3Y2PcDAlc",
     "Connection": "keep-alive",
     "Priority": "u=0"
 }
 
 # Get the current date and time and calculate dynamic fields
 current_datetime = datetime.now()
+
+# Calculate registration deadline
 registration_deadline = (current_datetime + timedelta(minutes=2)).strftime("%Y-%m-%d %H:%M:%S")
+
+
+# Calculate start time
 start_time = (current_datetime + timedelta(minutes=2)).strftime("%Y-%m-%d %H:%M:%S")  # 5 + 3 minutes
 
+# Get duration input from user
 try:
     duration = int(input("Enter the duration of the exam in minutes (default is 45): "))
 except ValueError:
     print("Invalid or no input. Defaulting to 45 minutes.")
     duration = 45
 
+# Calculate published_at time
 published_at = (current_datetime + timedelta(minutes=2 + duration)).strftime("%Y-%m-%d %H:%M:%S")
-
-print("Mock Test is:: ",user_title),
 
 # Prompt user for allowing answer changes
 try:
@@ -44,184 +48,157 @@ except (ValueError, TypeError):
     print("Invalid or no input. Defaulting to allow answer change.")
     allow_answer_change = 1
 
-
-
-data_create_exam = {
-    "guard_name": "admin-api",
-    "join_in_middle": 1,
-    "allow_answer_change": allow_answer_change,  # Dynamic allow answer change
-    "send_notification": 0,
-    "is_featured": 0,
-    "is_criteria": 0,
-    "is_active": 1,
-    "status": 1,
-    "is_free": 1,
-    "price": 0,
-    "exam_setup_type": 1,
-    "marks": 20,
-    "duration": str(duration),
-    "negative_marking": "1",
-    "start_time": start_time,
-    "registration_deadline": registration_deadline,
-
-    "questions": [
-        {
-            "body": "<p>Two wire loops of different radii are placed in a plane such that they are concentric. The current in outer loop is clockwise and increasing with time. The current in the inner loop is</p>",
-            "id": 1820,
-            "order": 1,
-            "marks": 1
-        },
-        {
-            "body": "<p>Whenever there is a change in magnetic flux linked with a circuit, an emf is induced which is proportional to the rate of change of magnetic flux linked with the circuit. This law is called :</p>",
-            "id": 4541,
-            "order": 2,
-            "marks": 1
-        },
-        {
-            "body": "<p>Faraday's law of electromagnetic induction states that induced emf in a circuit is :</p>",
-            "id": 4548,
-            "order": 3,
-            "marks": 1
-        },
-        {
-            "body": "<p>The direction of the induced current in a circuit is always such that it opposes the cause due to which it is produced. This law is named as :</p>",
-            "id": 4551,
-            "order": 4,
-            "marks": 1
-        },
-        {
-            "body": "<p>Lenz's law gives </p>",
-            "id": 4553,
-            "order": 5,
-            "marks": 1
-        },
-        {
-            "body": "<p>Lenz's law is a consequence of the law of conservation of</p>",
-            "id": 4556,
-            "order": 6,
-            "marks": 1
-        },
-        {
-            "body": "<p>When a magnet is removed with its N-pole towards a closed coil, the nearer end of the coil acts as :</p>",
-            "id": 4559,
-            "order": 7,
-            "marks": 1
-        },
-        {
-            "body": "<p>A magnet is moved towards a coil (A) quickly (B) slowly. Then the induced emf is :</p>",
-            "id": 4564,
-            "order": 8,
-            "marks": 1
-        },
-        {
-            "body": "<p>Whenever a magnet is moved either towards or away from a conducting coil, an emf is induced; the magnitude of which is independent of :</p>",
-            "id": 4568,
-            "order": 9,
-            "marks": 1
-        },
-        {
-            "body": "<p>The self inductance of a coil is a measure of :</p>",
-            "id": 4571,
-            "order": 10,
-            "marks": 1
-        },
-        {
-            "body": "<p>The unit of inductance is </p>",
-            "id": 4572,
-            "order": 11,
-            "marks": 1
-        },
-        {
-            "body": "<p>Two pure inductors each of self-inductance L are connected in series, the net inductance is :</p>",
-            "id": 4575,
-            "order": 12,
-            "marks": 1
-        },
-        {
-            "body": "<p>An inductor coil of inductance L is divided into two equal parts and both parts are connected in parallel. The net inductance is</p>",
-            "id": 4584,
-            "order": 13,
-            "marks": 1
-        },
-        {
-            "body": "<p>When a wire loop is rotated in a magnetic field, the direction of induced emf changes once in every :</p>",
-            "id": 4588,
-            "order": 14,
-            "marks": 1
-        },
-        {
-            "body": "<p>Self-inductance of a coil varies as :</p>",
-            "id": 4592,
-            "order": 15,
-            "marks": 1
-        },
-        {
-            "body": "<p>The self-inductance of a straight wire is :</p>",
-            "id": 4599,
-            "order": 16,
-            "marks": 1
-        },
-        {
-            "body": "<p>In a resistance box, the resistance coil is doubled on itself to avoid :</p>",
-            "id": 4601,
-            "order": 17,
-            "marks": 1
-        },
-        {
-            "body": "<p>Eddy currents are:</p>",
-            "id": 4607,
-            "order": 18,
-            "marks": 1
-        },
-        {
-            "body": "<p>Why the current does not rise immediately in a circuit containing inductance :</p>",
-            "id": 4610,
-            "order": 19,
-            "marks": 1
-        },
-        {
-            "body": "<p>To induce emf in a coil, the magnetic flux linking :</p>",
-            "id": 4612,
-            "order": 20,
-            "marks": 1
-        }
-    ],
-
-
-    "exam_reminders": [11],
-    "rewards": [{"position": 1, "prize": 5000}],
-    "is_routine": False,
-    "criteria_fields": [],
-    "auto_save_message": "<p>Mock test time is up. Your answer will be submitted automatically...</p>",
-    "self_submit_message": "<p>Thank you for submitting. Wishing you good results.</p>",
-    "confirmation_message": "<p>Your mock test will be submitted...</p>",
-    "rules": "<p>Student should attend the test solely</p>...",
-    "terms_and_condition": "<p>Students are not allowed to submit...</p>",
-    "packages": [22],
-    "showPackageform": False,
-    "exam_threshold_id": 2,
-#"title": "Mock Test ",
-  #  "sub_title": "Mock Test Testing",
-    "number_of_participant": "50",
-    "points": "100",
-    "number_of_questions": "25",
-    "description": "Mock Test Testing",
-    "published_at": published_at,
-    "participant_limit": "20",
-    "pass_percentage": "25",
-   # "model_set_title": "Mock Test Testing",S
-#    "model_set_subtitle": "Mock Test Testing",
-    "setup_through": 1,
-    "exam_setup_id": None,
-      
-    # Set user-provided title dynamically in multiple fields
+data_create_exam =  {
+  "guard_name": "admin-api",
+  "join_in_middle": 1,
+  "allow_answer_change": 1,
+  "send_notification": 0,
+  "is_featured": 0,
+  "is_criteria": 0,
+  "is_active": 1,
+  "status": 1,
+  "is_free": 1,
+  "price": 0,
+  "exam_setup_type": 1,
+  "marks": 10,
+  "duration": "5",
+  "negative_marking": "0.25",
+  "start_time": start_time,  # Use the calculated start_time
+  "registration_deadline": registration_deadline,
+  "questions": [
+    {
+      "body": "<p>Two wire loops of different radii are placed in a plane such that they are concentric. The current in outer loop is clockwise and increasing with time. The current in the inner loop is</p>",
+      "id": 1820,
+      "order": 1,
+      "marks": 1,
+      "extras": {
+        "subject": { "id": 2392, "name": "Physics" },
+        "unit": { "id": 2434, "name": "Magnetism" }
+      }
+    },
+    {
+      "body": "<p>Whenever there is a change in magnetic flux linked with a circuit, an emf is induced which is proportional to the rate of change of magnetic flux linked with the circuit. This law is called :</p>",
+      "id": 4541,
+      "order": 2,
+      "marks": 1,
+      "extras": {
+        "subject": { "id": 2392, "name": "Physics" },
+        "unit": { "id": 2434, "name": "Magnetism" }
+      }
+    },
+    {
+      "body": "<p>Faraday's law of electromagnetic induction states that induced emf in a circuit is :</p>",
+      "id": 4548,
+      "order": 3,
+      "marks": 1,
+      "extras": {
+        "subject": { "id": 2392, "name": "Physics" },
+        "unit": { "id": 2434, "name": "Magnetism" }
+      }
+    },
+    {
+      "body": "<p>The direction of the induced current in a circuit is always such that it opposes the cause due to which it is produced. This law is named as :</p>",
+      "id": 4551,
+      "order": 4,
+      "marks": 1,
+      "extras": {
+        "subject": { "id": 2392, "name": "Physics" },
+        "unit": { "id": 2434, "name": "Magnetism" }
+      }
+    },
+    {
+      "body": "<p>Lenz's law gives </p>",
+      "id": 4553,
+      "order": 5,
+      "marks": 1,
+      "extras": {
+        "subject": { "id": 2392, "name": "Physics" },
+        "unit": { "id": 2434, "name": "Magnetism" }
+      }
+    },
+    {
+      "body": "<p>Lenz's law is a consequence of the law of conservation of</p>",
+      "id": 4556,
+      "order": 6,
+      "marks": 1,
+      "extras": {
+        "subject": { "id": 2392, "name": "Physics" },
+        "unit": { "id": 2434, "name": "Magnetism" }
+      }
+    },
+    {
+      "body": "<p>When a magnet is removed with its N-pole towards a closed coil, the nearer end of the coil acts as :</p>",
+      "id": 4559,
+      "order": 7,
+      "marks": 1,
+      "extras": {
+        "subject": { "id": 2392, "name": "Physics" },
+        "unit": { "id": 2434, "name": "Magnetism" }
+      }
+    },
+    {
+      "body": "<p>A magnet is moved towards a coil (A) quickly (B) slowly. Then the induced emf is :</p>",
+      "id": 4564,
+      "order": 8,
+      "marks": 1,
+      "extras": {
+        "subject": { "id": 2392, "name": "Physics" },
+        "unit": { "id": 2434, "name": "Magnetism" }
+      }
+    },
+    {
+      "body": "<p>Whenever a magnet is moved either towards or away from a conducting coil, an emf is induced; the magnitude of which is independent of :</p>",
+      "id": 4568,
+      "order": 9,
+      "marks": 1,
+      "extras": {
+        "subject": { "id": 2392, "name": "Physics" },
+        "unit": { "id": 2434, "name": "Magnetism" }
+      }
+    },
+    {
+      "body": "<p>The self inductance of a coil is measure of :</p>",
+      "id": 4571,
+      "order": 10,
+      "marks": 1,
+      "extras": {
+        "subject": { "id": 2392, "name": "Physics" },
+        "unit": { "id": 2434, "name": "Magnetism" }
+      }
+    }
+  ],
+  "exam_reminders": [8],
+  "rewards": [
+    { "position": 1, "prize": 5000 }
+  ],
+  "is_routine": False,
+  "criteria_fields": [],
+  "auto_save_message": "<p>Mock test time is up. Your answer will be submitted automatically. All the best for your result.</p>",
+  "self_submit_message": "<p>Thank you for submitting. Wishing you good results.</p>",
+  "confirmation_message": "<p>Your mock test will be submitted. If needed, verify the answer. All the best for your results.</p>",
+  "rules": "<p>Student should attend the test solely</p><p>Students are suggested not to exit and resume the test.</p>",
+  "terms_and_condition": "<p>Students are not allowed to submit the answer through any source.</p><p>If any unwanted activity is detected, students can be disqualified for the exam...</p>",
+  "packages": [22],
+  "showPackageform": False,
+  "exam_threshold_id": 2,
     "title": user_title,
     "sub_title": user_title,
+  "number_of_participant": "12",
+  "points": "12",
+  "number_of_questions": "10",
+  "description": "Mocktest 23456",
+  "published_at": published_at,
+  "pass_percentage": "12",
     "model_set_title": user_title,
     "model_set_subtitle": user_title,
+        "setup_through": 1,
+  "exam_setup_id": None,
+  "participant_limit": "10"
 }
 
-# Send the request to create the exam
+
+# Debug payload
+print("Payload:", data_create_exam)
 response_create_exam = requests.post(url_create_exam, headers=headers, json=data_create_exam)
 
 if response_create_exam.status_code == 201:
@@ -247,4 +224,3 @@ if response_create_exam.status_code == 201:
 else:
     print("Failed to create exam. Status Code:", response_create_exam.status_code)
     print("Response:", response_create_exam.json())
-
