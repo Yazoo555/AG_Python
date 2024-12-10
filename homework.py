@@ -12,7 +12,7 @@ user_title = input("Please enter the title for the Homework: ")
 current_datetime = datetime.now()
 start_time = (current_datetime).strftime("%Y-%m-%d %H:%M:%S")
 end_time = (current_datetime + timedelta(days=2)).strftime("%Y-%m-%d %H:%M:%S")
-published_at = current_datetime.strftime("%Y-%m-%d %H:%M:%S")  # Use the current time for published_at
+#published_at = current_datetime.strftime("%Y-%m-%d %H:%M:%S")  # Use the current time for published_at
 
 
 # Headers for API request
@@ -20,7 +20,7 @@ headers = {
     "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:132.0) Gecko/20100101 Firefox/132.0",
     "Accept": "application/json, text/plain, */*",
     "Content-Type": "application/json",
-    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNWQxZjc5ZGRjZjBlNWViZDU2YTllNDA3ZjNmYmE1ZjM1NjJhYTY5ZThmMzUxMjJlYTJiNzYzOWQ0Y2IwYjdhNzY3MDdjMjVlM2IzOGEwZjkiLCJpYXQiOjE3MzM1NTIxMzcuNTczMzE0LCJuYmYiOjE3MzM1NTIxMzcuNTczMzE2LCJleHAiOjE3MzQxNTY5MzcuNTY1MzA2LCJzdWIiOiIzNzIiLCJzY29wZXMiOlsiYWRtaW4iXX0.lLA6MUyrNODe85u58gT6-yjajK8d7duxB3A69CcbKgh2RZaVvHCXX8bciYlKyVCyHFdMoQIonWaZpeRTfgI9o-KOg0xjOPnj7XkS1ulNsYXh29oRupElh2IU5_CEy6IYvLCjwXlSeVol6iUKtiy8fMos6O8YGH4fVh8Z9j386zXEXPcQnyfP73YfFP02gDp-5onloZkYIcNt420jT6O5DoE7RXzLHAwGx_7NVfY1assKSjb-1h1JXv3E13g5uVRbaor4HZgZk4CWt1SNgWMw1RsWMViSa1MNu_BBb457IPpYT-xpTJvF7pYLYYX911GlNi9b81ZAnEPSVpkm-v6Xcds55jENtF8nEf2VUxlJqg7HZ-rRBGwpdaVbjQrJ7cZckj42g0bkNidAPijj21lyIbLrq3z5NYYgQwjLkFoOzdODw1bUxE8UKVMzRiVEe9Z49h1c6_EhnpjQYPDRA4y7wDVuZNzPnoTZvCHTwVIiYrOdqnSvLWcq3_0Styxk11_iNhFxs_SpBc6I_V6GbXUqn4vfLlYD19fsA1tXnXLSqA2AHBajL5Oz3QpBNQHZuQIx32P0lCjLVVoqY5wUks86XHPsM1tm3kqv03UQLOLdkPFqqvu_DtLWVPJso__oZGTRV-FtCngCPgrmi-UlaNxttbNJ7V_lviILq-3Y2PcDAlc",
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjlhM2MzZDI1Y2ZlMDBlYTQ3ZWM3MWQwOWY1ZDE2NWJjMTJlMTJhZDAwMWEzNjUyMjU2NGYxNjE5NTNmZmEzODkzOWYwZmU2MjUxOTExYTkiLCJpYXQiOjE3MzM3NTQxMDYuMDY3OTkyLCJuYmYiOjE3MzM3NTQxMDYuMDY3OTk0LCJleHAiOjE3MzQzNTg5MDYuMDU4NzgxLCJzdWIiOiI4MSIsInNjb3BlcyI6WyJhZG1pbiJdfQ.Zf0ykC8frnrPKaktS6TTPD7Aqerf4RHrOk-pepB5lbpgBqJZogkT_TQKfsXisNfgTQ7ADx78b3rHF34p7CDR_wDfqQlmOwQNa0Q1YuDyGDUkUzGqysSodTQ4fMmdNM4exW3kY_vOaBwEvaA32UicD8qKtcE0EuOpCQyemWO09h_RqP6B6ZjSbFHQCUM_Gu5LqQls9aXQAmIHEpaMkdQuqjPQu02lCVermTFoYB4INLLPZq-_XJV1bHn8m8o9jKRfx4jvLBscoYinxdcjbr2mxHH0Ysj7Hx-Dh105WI-EWT-QMo7fB1xky3FE8pBi8Uz1XKZ5zCiVndZaBTkcBxtXX5ItC8PmiYA0rSEjmTjkTEkQJQyWE8D1YaaMbCLOJdMQzAEUzjAGI0nQUkrGbwQhtJAG5qsw21JglFeK-WlktwiqmmdkjzT4Ih358uvdCgirZ_qnLu5hmT1ehxeOU28HcHy-eLjEKDzSouqT_Qq-3dKCErBsbNOyMAS2-Kv9GLGQ-kPZK5-4vR6GLa74-Mn2-v1ezGV82_bTEXOOH-xmUbfb1kixzWrbhLJhSsEFzdhdA7Sud3oHBzPvH0P7ac0sBz1_veFHe_egZTs_vjFrbW5J3e3fHRRdzhk6-yURS1OSlKl5Hgz2fCag4pTJeBNFV-zVIQNffHkgkV3mHjajviE",
     "Connection": "keep-alive"
 }
 
@@ -69,8 +69,8 @@ data_create_homework = {
     "is_criteria": 0,
     "criteria_fields": [],
     "is_featured": 0,
-    "is_published": 1,
-    "published_at": published_at,
+    "is_published": 0,
+   # "published_at": published_at,
     "price": 0,
     "pass_percentage": "10",
     "auto_save_message": "<p>Mock test time is up. Your answer will be submitted automatically. All the best for your result.</p>",
@@ -351,6 +351,8 @@ data_create_homework = {
 # Send POST request to create homework
 response_create_homework = requests.post(url_create_homework, headers=headers, json=data_create_homework)
 
+
+
 if response_create_homework.status_code == 201:
     response_data = response_create_homework.json()
     homework_id = response_data.get("data", {}).get("id")
@@ -368,3 +370,6 @@ else:
     print("Failed to create homework.")
     print("Status Code:", response_create_homework.status_code)
     print("Response:", response_create_homework.text)
+
+
+      
