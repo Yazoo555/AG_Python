@@ -549,13 +549,24 @@ if response_create_homework.status_code == 201:
     print("Homework created successfully!")
     print(f"Homework ID: {homework_id}")
     print(f"Homework Title: {user_title}")
-    
+
     # Construct the URL to open the homework
     homework_url = f"https://admin.ambition.guru/exams/mock-test-detail/{homework_id}?routeName=Exams"
     print(f"Opening homework in browser: {homework_url}")
-    
-    # Open the URL in the default browser
     webbrowser.open(homework_url)
+
+    # Lock the questions for the created homework
+    url_lock_questions = f"https://api-adm.ambition.guru/api/v1/admin/exams/{homework_id}/lock-questions"
+    response_lock_questions = requests.post(url_lock_questions, headers=headers)
+
+    # Check if the locking was successful
+    if response_lock_questions.status_code == 200:
+        print(f"Questions locked successfully for Homework ID: {homework_id}")
+    else:
+        print("Failed to lock questions.")
+        print("Status Code:", response_lock_questions.status_code)
+        print("Response:", response_lock_questions.text)
+
 else:
     print("Failed to create homework.")
     print("Status Code:", response_create_homework.status_code)
