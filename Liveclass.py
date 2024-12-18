@@ -18,7 +18,7 @@ headers = {
     "Referer": "https://admin.ambition.guru/",
     "X-Requested-With": "XMLHttpRequest",
     "Origin": "https://admin.ambition.guru",
-    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjlhM2MzZDI1Y2ZlMDBlYTQ3ZWM3MWQwOWY1ZDE2NWJjMTJlMTJhZDAwMWEzNjUyMjU2NGYxNjE5NTNmZmEzODkzOWYwZmU2MjUxOTExYTkiLCJpYXQiOjE3MzM3NTQxMDYuMDY3OTkyLCJuYmYiOjE3MzM3NTQxMDYuMDY3OTk0LCJleHAiOjE3MzQzNTg5MDYuMDU4NzgxLCJzdWIiOiI4MSIsInNjb3BlcyI6WyJhZG1pbiJdfQ.Zf0ykC8frnrPKaktS6TTPD7Aqerf4RHrOk-pepB5lbpgBqJZogkT_TQKfsXisNfgTQ7ADx78b3rHF34p7CDR_wDfqQlmOwQNa0Q1YuDyGDUkUzGqysSodTQ4fMmdNM4exW3kY_vOaBwEvaA32UicD8qKtcE0EuOpCQyemWO09h_RqP6B6ZjSbFHQCUM_Gu5LqQls9aXQAmIHEpaMkdQuqjPQu02lCVermTFoYB4INLLPZq-_XJV1bHn8m8o9jKRfx4jvLBscoYinxdcjbr2mxHH0Ysj7Hx-Dh105WI-EWT-QMo7fB1xky3FE8pBi8Uz1XKZ5zCiVndZaBTkcBxtXX5ItC8PmiYA0rSEjmTjkTEkQJQyWE8D1YaaMbCLOJdMQzAEUzjAGI0nQUkrGbwQhtJAG5qsw21JglFeK-WlktwiqmmdkjzT4Ih358uvdCgirZ_qnLu5hmT1ehxeOU28HcHy-eLjEKDzSouqT_Qq-3dKCErBsbNOyMAS2-Kv9GLGQ-kPZK5-4vR6GLa74-Mn2-v1ezGV82_bTEXOOH-xmUbfb1kixzWrbhLJhSsEFzdhdA7Sud3oHBzPvH0P7ac0sBz1_veFHe_egZTs_vjFrbW5J3e3fHRRdzhk6-yURS1OSlKl5Hgz2fCag4pTJeBNFV-zVIQNffHkgkV3mHjajviE",
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDZlZDc4NGM4YmE4ZDBhNGRiYzg3YjdmMmNkZjdkZTQwMDk5YzU3ZmE2MmNhN2QwNThmZTU5YWM3NDgyMTA2OGQ1OGU5NTRhNWI5ODZiNDYiLCJpYXQiOjE3MzQ0OTY4NjMuNDE2MTI5LCJuYmYiOjE3MzQ0OTY4NjMuNDE2MTM0LCJleHAiOjE3MzUxMDE2NjMuNDA4Mjk1LCJzdWIiOiI4MSIsInNjb3BlcyI6WyJhZG1pbiJdfQ.H0YqA22AfrACdZTJUZxB8IdQ-P6RrsC2kwStPBy7rd8sgndjXdfUSmh_sng0cvSvddxmXIKFNrHXMe8BJ8SFzQpFHNujvFL1hWFyJ6g_8mBocLzRzstoGnK65tQ8SSgCr70CAueMrZgd305VR-bclRQiF_idO9ygAe5qGpUps1DTP5BitJrusXc10c8wO9bWBMIgn0IzU09JCssIye4QptCAcAHRy_nrjwXECI7cjMzwGeHq18d9Dq33qSDG0jy_IrJVst56XepMqC9bDkU_MLtY_V13uA8g_XBuK-Hv1s1YaG0X24JO_TUKcqdYvJBkl1qNMP6pn6ng0gE-X-reoHIXradMarad1AWZOrqsHqm2w7H72GgqMGKV1W7LBnIj9BZHBkGDv_tlIS8MTMi2_oWBAamlTXdbHsjW7fox_NBcckSSXJzeYJr5QJgXE28lF1kI5_1JAS2El2-ZHaqBxmW4dTMhKfuYUs-G8lVnhgxnnVh462Qqt1grwORdybDKtAOF9zo9TvVQUxgw7rXHCL5pVut8I4-FHKX0uqsUNwTDlf5UoIUL8pN4dZuTZjtmU5sXqr5dytqFgctOT75O-Ny6kbQe4D_GgdwOuwV0BWOKkHgu9nXAztd_oOJfLLdoSPAhvuNvfhhZcmWVmGXLL7xrZcssF4T-vnGhd1tQAD8",
     "Connection": "keep-alive",
     "Priority": "u=0"
 }
@@ -31,22 +31,18 @@ start_time = current_datetime.strftime("%Y-%m-%d %H:%M")  # Current date and tim
 # Map of available Zoom accounts
 
 accounts = {
-    20: {"name": "Zoom Account - (Science2 - niraj@yajtechnologies.com)", "participant_limit": 3000},
-    10: {"name": "Zoom Account - 7 (Aqhter)", "participant_limit": 500},
-    49: {"name": "ISV Zoom Account 13 - 3000", "participant_limit": 3000},
-    7: {"name": "Zoom Account - 6 (Prashant)", "participant_limit": 500},
-    37: {"name": "ISV Zoom Account 1 - 500", "participant_limit": 500},
-    38: {"name": "ISV Zoom Account 2 - 500", "participant_limit": 500},
-    39: {"name": "ISV Zoom Account 3 - 500", "participant_limit": 500},
-    40: {"name": "ISV Zoom Account 4 - 500", "participant_limit": 500},
-    41: {"name": "ISV Zoom Account 5 - 500", "participant_limit": 500},
-    42: {"name": "ISV Zoom Account 6 - 500", "participant_limit": 500},
-    43: {"name": "ISV Zoom Account 7 - 1000", "participant_limit": 1000},
-    44: {"name": "ISV Zoom Account 8 - 1000", "participant_limit": 1000},
-    45: {"name": "ISV Zoom Account 9 - 1000", "participant_limit": 1000},
-    46: {"name": "ISV Zoom Account 10 - 1000", "participant_limit": 1000},
-    47: {"name": "ISV Zoom Account 11 - 3000", "participant_limit": 3000},
-    48: {"name": "ISV Zoom Account 12 - 3000", "participant_limit": 3000}
+    48: { "name": "Loksewa 3000 B", "participant_limit": 3000 },
+    47: { "name": "Loksewa 3000 A", "participant_limit": 3000 },
+    46: { "name": "ISV Zoom Account 10 - 1000", "participant_limit": 1000 },
+    45: { "name": "ISV Zoom Account 9 - 1000", "participant_limit": 1000 },
+    44: { "name": "Loksewa 1000 B", "participant_limit": 1000 },
+    43: { "name": "Loksewa 1000 A", "participant_limit": 1000 },
+    42: { "name": "ISV Zoom Account 6 - 500", "participant_limit": 500 },
+    41: { "name": "ISV Zoom Account 5 - 500", "participant_limit": 500 },
+    40: { "name": "Orientation 500", "participant_limit": 500 },
+    39: { "name": "Loksewa 500 C", "participant_limit": 500 },
+    38: { "name": "Loksewa 500 B", "participant_limit": 500 },
+    37: { "name": "Loksewa 500 A", "participant_limit": 500 },
 }
 
 
