@@ -34,6 +34,16 @@ start_time = (current_datetime + timedelta(minutes=5)).strftime("%Y-%m-%d %H:%M:
 registration_deadline = start_time
 published_at = (current_datetime + timedelta(minutes=10)).strftime("%Y-%m-%d %H:%M:%S")
 
+# Ask user if the test is free or paid
+is_free_input = input("Is the test free? (yes/no): ").strip().lower()
+
+if is_free_input == "yes":
+    is_free = 1
+    price = 0
+else:
+    is_free = 0
+    price = float(input("Enter the price for the paid test: ").strip())
+
 # Payload
 data_create_exam= {
     'guard_name': 'admin-api',
@@ -44,12 +54,12 @@ data_create_exam= {
     'is_criteria': 0,
     'is_active': 1,
     'status': 1,
-    'is_free': 1,
-    'price': 0,
+    'is_free': is_free,
+    'price': price,
     'exam_setup_type': 1,
     'marks': 10,
     'duration': '15',
-    'negative_marking': '1',
+    'negative_marking': '0.25',
     'start_time': start_time,
     'registration_deadline': registration_deadline,
     'questions': [
@@ -728,7 +738,11 @@ data_create_exam= {
     'participant_limit': '10',
 }
  
-
+print("Exam configuration:")
+print(f"Is Free: {'Yes' if is_free else 'No'}")
+if not is_free:
+    print(f"Price: {price}")
+    
 # Make the API request to create the exam
 response_create_exam = requests.post(url_create_exam, headers=headers, json=data_create_exam)
 
