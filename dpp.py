@@ -6,13 +6,6 @@ import webbrowser
 url_create_exam = "https://api-adm.ambition.guru/api/v1/admin/exams"
 user_title = input("Please enter the title for the exam: ")
 
-
-
-# Note: json_data will not be serialized by requests
-# exactly as it was in the original request.
-#data = '{"encryptedUserId":"eyJpdiI6IjZBQ0NhL2poSDd1YkxQVnRHTzFoUkE9PSIsInZhbHVlIjoia2lXdVpyRFlNaXljL0FERkw0UXE4QT09IiwibWFjIjoiOTkwODM5ZjZjOWE0ZTk5MjRlYmI4ODhmMmVlZGRjZTM2ZmE0ZGEzZjM5YTgxMTY3ZDg4MGZiY2FlOTRlYzRmMiIsInRhZyI6IiJ9","key":"7659ebe0-9fb7-4539-8f67-f55a11851231"}'
-#response = requests.post('https://api-adm.ambition.guru/api/v1/admin/login-with-qr-auth', headers=headers, data=data, verify=False)
-
 # Headers
 headers = {
     "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0",
@@ -23,8 +16,8 @@ headers = {
     "Referer": "https://admin.ambition.guru/",
     "X-Requested-With": "XMLHttpRequest",
     "Origin": "https://admin.ambition.guru",
-    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDZlZDc4NGM4YmE4ZDBhNGRiYzg3YjdmMmNkZjdkZTQwMDk5YzU3ZmE2MmNhN2QwNThmZTU5YWM3NDgyMTA2OGQ1OGU5NTRhNWI5ODZiNDYiLCJpYXQiOjE3MzQ0OTY4NjMuNDE2MTI5LCJuYmYiOjE3MzQ0OTY4NjMuNDE2MTM0LCJleHAiOjE3MzUxMDE2NjMuNDA4Mjk1LCJzdWIiOiI4MSIsInNjb3BlcyI6WyJhZG1pbiJdfQ.H0YqA22AfrACdZTJUZxB8IdQ-P6RrsC2kwStPBy7rd8sgndjXdfUSmh_sng0cvSvddxmXIKFNrHXMe8BJ8SFzQpFHNujvFL1hWFyJ6g_8mBocLzRzstoGnK65tQ8SSgCr70CAueMrZgd305VR-bclRQiF_idO9ygAe5qGpUps1DTP5BitJrusXc10c8wO9bWBMIgn0IzU09JCssIye4QptCAcAHRy_nrjwXECI7cjMzwGeHq18d9Dq33qSDG0jy_IrJVst56XepMqC9bDkU_MLtY_V13uA8g_XBuK-Hv1s1YaG0X24JO_TUKcqdYvJBkl1qNMP6pn6ng0gE-X-reoHIXradMarad1AWZOrqsHqm2w7H72GgqMGKV1W7LBnIj9BZHBkGDv_tlIS8MTMi2_oWBAamlTXdbHsjW7fox_NBcckSSXJzeYJr5QJgXE28lF1kI5_1JAS2El2-ZHaqBxmW4dTMhKfuYUs-G8lVnhgxnnVh462Qqt1grwORdybDKtAOF9zo9TvVQUxgw7rXHCL5pVut8I4-FHKX0uqsUNwTDlf5UoIUL8pN4dZuTZjtmU5sXqr5dytqFgctOT75O-Ny6kbQe4D_GgdwOuwV0BWOKkHgu9nXAztd_oOJfLLdoSPAhvuNvfhhZcmWVmGXLL7xrZcssF4T-vnGhd1tQAD8",
-},
+    'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDZlZDc4NGM4YmE4ZDBhNGRiYzg3YjdmMmNkZjdkZTQwMDk5YzU3ZmE2MmNhN2QwNThmZTU5YWM3NDgyMTA2OGQ1OGU5NTRhNWI5ODZiNDYiLCJpYXQiOjE3MzQ0OTY4NjMuNDE2MTI5LCJuYmYiOjE3MzQ0OTY4NjMuNDE2MTM0LCJleHAiOjE3MzUxMDE2NjMuNDA4Mjk1LCJzdWIiOiI4MSIsInNjb3BlcyI6WyJhZG1pbiJdfQ.H0YqA22AfrACdZTJUZxB8IdQ-P6RrsC2kwStPBy7rd8sgndjXdfUSmh_sng0cvSvddxmXIKFNrHXMe8BJ8SFzQpFHNujvFL1hWFyJ6g_8mBocLzRzstoGnK65tQ8SSgCr70CAueMrZgd305VR-bclRQiF_idO9ygAe5qGpUps1DTP5BitJrusXc10c8wO9bWBMIgn0IzU09JCssIye4QptCAcAHRy_nrjwXECI7cjMzwGeHq18d9Dq33qSDG0jy_IrJVst56XepMqC9bDkU_MLtY_V13uA8g_XBuK-Hv1s1YaG0X24JO_TUKcqdYvJBkl1qNMP6pn6ng0gE-X-reoHIXradMarad1AWZOrqsHqm2w7H72GgqMGKV1W7LBnIj9BZHBkGDv_tlIS8MTMi2_oWBAamlTXdbHsjW7fox_NBcckSSXJzeYJr5QJgXE28lF1kI5_1JAS2El2-ZHaqBxmW4dTMhKfuYUs-G8lVnhgxnnVh462Qqt1grwORdybDKtAOF9zo9TvVQUxgw7rXHCL5pVut8I4-FHKX0uqsUNwTDlf5UoIUL8pN4dZuTZjtmU5sXqr5dytqFgctOT75O-Ny6kbQe4D_GgdwOuwV0BWOKkHgu9nXAztd_oOJfLLdoSPAhvuNvfhhZcmWVmGXLL7xrZcssF4T-vnGhd1tQAD8',
+}
 
 # Current date and time for dynamic fields
 current_datetime = datetime.now()
