@@ -52,7 +52,7 @@ data_create_exam= {
     'send_notification': 0,
     'is_featured': 0,
     'is_criteria': 0,
-    'is_active': 1,
+    'is_active': 0,
     'status': 1,
     'is_free': is_free,
     'price': price,

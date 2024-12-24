@@ -167,7 +167,7 @@ data_create_exam =  {
       }
     }
   ],
-  "exam_reminders": [8],
+  "exam_reminders": [3],
   "rewards": [
     { "position": 1, "prize": 5000 }
   ],
