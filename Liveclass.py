@@ -52,7 +52,7 @@ for account_id, account_info in accounts.items():
     print(f"{account_id}: {account_info['name']} (Participant Limit: {account_info['participant_limit']})")
 
 
-selected_account = input("Enter the ID of the Zoom account to use (default is 10): ")
+selected_account = input("Enter the ID of the Zoom account to use (default is 37): ")
 
 # Validate and set account ID
 try:
@@ -60,7 +60,7 @@ try:
     if live_class_account_id not in accounts:
         raise ValueError("Invalid ID")
 except (ValueError, TypeError):
-    print("Invalid or no input. Defaulting to account ID 10.")
+    print("Invalid or no input. Defaulting to account ID 37.")
     live_class_account_id = 10
 
 data_create_meeting = {

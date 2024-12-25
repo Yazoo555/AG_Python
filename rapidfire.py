@@ -17,6 +17,40 @@ headers = {
 }
 
 # First API: Create meeting
+
+accounts = {
+    48: { "name": "Loksewa 3000 B", "participant_limit": 3000 },
+    47: { "name": "Loksewa 3000 A", "participant_limit": 3000 },
+    46: { "name": "ISV Zoom Account 10 - 1000", "participant_limit": 1000 },
+    45: { "name": "ISV Zoom Account 9 - 1000", "participant_limit": 1000 },
+    44: { "name": "Loksewa 1000 B", "participant_limit": 1000 },
+    43: { "name": "Loksewa 1000 A", "participant_limit": 1000 },
+    42: { "name": "ISV Zoom Account 6 - 500", "participant_limit": 500 },
+    41: { "name": "ISV Zoom Account 5 - 500", "participant_limit": 500 },
+    40: { "name": "Orientation 500", "participant_limit": 500 },
+    39: { "name": "Loksewa 500 C", "participant_limit": 500 },
+    38: { "name": "Loksewa 500 B", "participant_limit": 500 },
+    37: { "name": "Loksewa 500 A", "participant_limit": 500 },
+}
+
+# Ask user to select an account or default to ID 10
+print("Available Zoom Accounts:")
+for account_id, account_info in accounts.items():
+    print(f"{account_id}: {account_info['name']} (Participant Limit: {account_info['participant_limit']})")
+
+
+selected_account = input("Enter the ID of the Zoom account to use (default is 10): ")
+
+# Validate and set account ID
+try:
+    live_class_account_id = int(selected_account)
+    if live_class_account_id not in accounts:
+        raise ValueError("Invalid ID")
+except (ValueError, TypeError):
+    print("Invalid or no input. Defaulting to account ID 37.")
+    live_class_account_id = 37
+
+
 json_data = {
     'type': 2,
     'password': '',
@@ -39,7 +73,7 @@ json_data = {
     'meeting_type': 2,
     'meeting_sub_type': '0',
     'remainder_template_id': [9],
-    'live_class_account_ids': [37],
+    "live_class_account_ids": [live_class_account_id],
     'description': app_title,
     'media_id': 1190021,
     'status': 0,
