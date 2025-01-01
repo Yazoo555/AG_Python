@@ -1,6 +1,8 @@
 import requests
 from datetime import datetime, timedelta
 import webbrowser
+import random
+
 
 # API URL for creating homework
 url_create_homework = "https://api-adm.ambition.guru/api/v1/admin/exams"
@@ -20,10 +22,10 @@ headers = {
     "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:132.0) Gecko/20100101 Firefox/132.0",
     "Accept": "application/json, text/plain, */*",
     "Content-Type": "application/json",
-    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDZlZDc4NGM4YmE4ZDBhNGRiYzg3YjdmMmNkZjdkZTQwMDk5YzU3ZmE2MmNhN2QwNThmZTU5YWM3NDgyMTA2OGQ1OGU5NTRhNWI5ODZiNDYiLCJpYXQiOjE3MzQ0OTY4NjMuNDE2MTI5LCJuYmYiOjE3MzQ0OTY4NjMuNDE2MTM0LCJleHAiOjE3MzUxMDE2NjMuNDA4Mjk1LCJzdWIiOiI4MSIsInNjb3BlcyI6WyJhZG1pbiJdfQ.H0YqA22AfrACdZTJUZxB8IdQ-P6RrsC2kwStPBy7rd8sgndjXdfUSmh_sng0cvSvddxmXIKFNrHXMe8BJ8SFzQpFHNujvFL1hWFyJ6g_8mBocLzRzstoGnK65tQ8SSgCr70CAueMrZgd305VR-bclRQiF_idO9ygAe5qGpUps1DTP5BitJrusXc10c8wO9bWBMIgn0IzU09JCssIye4QptCAcAHRy_nrjwXECI7cjMzwGeHq18d9Dq33qSDG0jy_IrJVst56XepMqC9bDkU_MLtY_V13uA8g_XBuK-Hv1s1YaG0X24JO_TUKcqdYvJBkl1qNMP6pn6ng0gE-X-reoHIXradMarad1AWZOrqsHqm2w7H72GgqMGKV1W7LBnIj9BZHBkGDv_tlIS8MTMi2_oWBAamlTXdbHsjW7fox_NBcckSSXJzeYJr5QJgXE28lF1kI5_1JAS2El2-ZHaqBxmW4dTMhKfuYUs-G8lVnhgxnnVh462Qqt1grwORdybDKtAOF9zo9TvVQUxgw7rXHCL5pVut8I4-FHKX0uqsUNwTDlf5UoIUL8pN4dZuTZjtmU5sXqr5dytqFgctOT75O-Ny6kbQe4D_GgdwOuwV0BWOKkHgu9nXAztd_oOJfLLdoSPAhvuNvfhhZcmWVmGXLL7xrZcssF4T-vnGhd1tQAD8",
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTIwOTQ4ODQ4MjI0MjU1YzY5OTUxMjZkM2ZhNTM3NzAyOWYxY2RiOTZlZmRjNzM0NGNlMzgwN2NiYTgwZTI3YWViOTFlYmZiOTQ2NzRiZWYiLCJpYXQiOjE3MzU0NzMxNDcuNTA3NTg0LCJuYmYiOjE3MzU0NzMxNDcuNTA3NTg4LCJleHAiOjE3MzYwNzc5NDcuNDk4NjY2LCJzdWIiOiI4MSIsInNjb3BlcyI6WyJhZG1pbiJdfQ.vKm1s1LiACMPcbT9dwqID-Pb380He3aJrEzaLWU1kUb22jYNcpVeJ0qSNK0qDUoTGE-zvIaN4J41ijeEHMAdVaBTvth3gWmslD2uMUBooNQLNfBFqyDmaZ6XSVwJHad_YD6NLk3trZcylefCta1JXrz455kyHNYkryqNU2IA-0J8vMn5yHY_KqEvF7R1ot3WLEGYfzggDDuU-ccKzvbl0dGsdtplJfJfqQMN3E3c69jKhQtf2O05vUFnHw0i0FD334EkN8p_3WCGMIx27TDGNNdm1czy3tomWpS5m3ku07pSp4FV63suvIlsyGnixjvgTuQ9TQt9MXFcjdmNYkBz92zZ9y3czzjjpoOOXIeBwGPJSjCwUmdUzClR1ILF8TS_3naWbxJdqhjGwn8kKCmG8N6PeccNLRbNNPFQj38XGVKlTIxVyJbS42RAzqo_2u29NGPwmc9Voq_RHcj2Obp9K0bwNV0CHjd1yK0X_fSSXtgdU4jV7HgVTSMfSVPcdHZfeyxkpayVM0ecOoEIrT6qcegdVIqFZ4-vJjKpkL59NHFs93yGC3luntpvhWxwlo3ao_lo2BvdiLeyWrTTRUPB25Zf3AU8bDIsfeiUMiWl2YEeg-E3rxzYtRkyTmZbVURMJp63ndutm8pOn9sPfFmCyk2M1-uYoRB2ldfBtKIN274",
     "Connection": "keep-alive"
 }
-
+ 
 # Data for creating the homework
 data_create_homework = {
     "id": 5241,
@@ -573,4 +575,8 @@ else:
     print("Response:", response_create_homework.text)
 
 
-      
+      # Print some information about the selected questions
+print(f"\nTotal questions selected: {len(data_create_homework['questions'])}")
+print("Sample of selected questions:")
+for i, q in enumerate(data_create_homework['questions'][:3]):
+    print(f"Question {i + 1}: {q['body'][:100]}...")
