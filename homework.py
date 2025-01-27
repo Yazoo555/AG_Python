@@ -4,6 +4,8 @@ import webbrowser
 import random
 import sys
 
+from auth import get_auth_token
+
 homeworkType = sys.argv[0] # it's either start or end
 
 if len(sys.argv) < 2 or sys.argv[1] not in ['start', 'end']:
@@ -36,7 +38,7 @@ headers = {
     "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:132.0) Gecko/20100101 Firefox/132.0",
     "Accept": "application/json, text/plain, */*",
     "Content-Type": "application/json",
-    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYjU4NjYxNjRmYzZmYzg5MmFlNWU1YmI2NGRiY2Q4Y2Q3NmM2NGZmOTkwZTZmYmFmOThlMzk0YjY4OTA2MzA0MTllYjMyZWI4N2NkOWE4NTciLCJpYXQiOjE3Mzc0NDAzNTguODk4MjEzLCJuYmYiOjE3Mzc0NDAzNTguODk4MjE5LCJleHAiOjE3MzgwNDUxNTguODg1MjM1LCJzdWIiOiIzNzIiLCJzY29wZXMiOlsiYWRtaW4iXX0.NXp0UY9gLYkB9CNxI5WGyD6Qo_Hd-dNQZIonglARlka0g2nCaBR5ZTPsqGrsVXiSJmCF4TWbkwO9QQH6pb7ec4fc7Z4U2I6jj8bsjeVVMmGpDZMrQS38U-BgPk1lBOW9OdvvxdtBkT6Z6JN0OYhWaLgXbuqy64PFAYeyI-nDhuW3A8U1ovLm4OX537Xyv_QQouLAZbImapdcYyCnyhyoIAJPu2FWWznn9E5tBxkx5HPQQVPIc2BCWlhAfzXdN1YevGD4kWK_cCrKn4K_9-2j2Puf6kJ2Y11pHgis6W6Pu17khEWN5zOOeiMTmHV5FkIkBeD380dFnQf_cMlW9icI43RpR1wBsC-fCYLsbhv7Yca8jT-eTIeXgDMjoZFfjOYfjFuEzw_-ihDaFRMRCxbRk3IKUg-woaYvjZiUP3_JaLIeuVj1tr5Pv-GDcfxx87qbPZuimaaMM1xETRmCXlaqGZT-1xVp4XUVU9uygpLXCnY9b4I4d2i8uiyeVP6vjOe7L0_knecTxGCfqoEn61Et4Hp4QgJrGFLtPZJwTn6VbJnSg9hK4iDjEMBvw9oSx6BtMfPVAQDrmNaVmcFVESRpnX1H-7uuuHX_F4QK41S53zAcSNhFYmWCThfgq40Hzt2wDqHrAcRUh-gENpbzl2rhC_TkK_TLg97LuC1KYhWjWaY",
+    "Authorization": f"Bearer {get_auth_token()}",
     "Connection": "keep-alive"
 }
  
