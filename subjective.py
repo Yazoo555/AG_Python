@@ -21,7 +21,7 @@ headers = {
     'Sec-Fetch-Dest': 'empty',
     'Sec-Fetch-Mode': 'cors',
     'Sec-Fetch-Site': 'same-site',
-    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNmVkNmVhNDFkODFmY2JkM2UzYTQ0OWI3ZWY0YjQ0ZGQ3MjIzYzllZTRlNTkxNWZiZTJmYTVjZmVjNGFlYjA3MzVhYjQ4ZmNlYjY3ZjY0Y2QiLCJpYXQiOjE3MzUxMDc2OTguMjY1NjM4LCJuYmYiOjE3MzUxMDc2OTguMjY1NjQxLCJleHAiOjE3MzU3MTI0OTguMjU3NTA1LCJzdWIiOiI4MSIsInNjb3BlcyI6WyJhZG1pbiJdfQ.r4PnLM_v18EbmLG0SKmiF7DEhT4O2-DXMF089Ee7Ub-qP2Pr80-KJ_PCUEqG3jKE67JhxZ96vvt7g04bX6u2cyU1nts_vM5yWvM_A20e3mmeM7066xvh9FmkXfLxPxgpcMd0mrJn2YLp-0_rZ8KZQXQXcE1Nqzi0vX2Own2QpD_yHxk9ILW-757NLVYiXI32oi3enoYjjfDlKJxZfC2q-5W7p8qNtC-BHy-V6VvqUhIF0u3v0FEEH4npUD0P80ixg0dgnSFIUxcgI_wdhkHrrp4wMHHnwCKQ8DOOpVp13wo0_EREWTVYL6kkgqjFsjUkKmcfVpmiY7HyGxb1bTp5VxX676_vS0gs9BsJJ8v9f1AxxB44X1ZnPdeWNRESHM_qJ0OeH_EoryfZCvecHJ2Ul2BDjMdw9kVJ0dnjj5LeuXO9oSv5OrZywulL5VWsL4UeIAYZXxZoMenCY7PzgucZsFCEyS0cptJmROIddz0oUsiosLn23XE-eeTL3SXbaspF1pyhRdQYH3Kza6aKEG7b0MogAXNFYPTmn7mB4LibIm0zEtul1P3geXS1geF57cmOwuG4VDvNY6a0n0QWNNeSwCvWta7jA7zugy_QFkLcqGpmZPbGZoin7k_8Aiq4aS7HTlLLnrNptiVajV5TvrgFasiGiiw02RCI-h1GenPCb0Q",
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYjU4NjYxNjRmYzZmYzg5MmFlNWU1YmI2NGRiY2Q4Y2Q3NmM2NGZmOTkwZTZmYmFmOThlMzk0YjY4OTA2MzA0MTllYjMyZWI4N2NkOWE4NTciLCJpYXQiOjE3Mzc0NDAzNTguODk4MjEzLCJuYmYiOjE3Mzc0NDAzNTguODk4MjE5LCJleHAiOjE3MzgwNDUxNTguODg1MjM1LCJzdWIiOiIzNzIiLCJzY29wZXMiOlsiYWRtaW4iXX0.NXp0UY9gLYkB9CNxI5WGyD6Qo_Hd-dNQZIonglARlka0g2nCaBR5ZTPsqGrsVXiSJmCF4TWbkwO9QQH6pb7ec4fc7Z4U2I6jj8bsjeVVMmGpDZMrQS38U-BgPk1lBOW9OdvvxdtBkT6Z6JN0OYhWaLgXbuqy64PFAYeyI-nDhuW3A8U1ovLm4OX537Xyv_QQouLAZbImapdcYyCnyhyoIAJPu2FWWznn9E5tBxkx5HPQQVPIc2BCWlhAfzXdN1YevGD4kWK_cCrKn4K_9-2j2Puf6kJ2Y11pHgis6W6Pu17khEWN5zOOeiMTmHV5FkIkBeD380dFnQf_cMlW9icI43RpR1wBsC-fCYLsbhv7Yca8jT-eTIeXgDMjoZFfjOYfjFuEzw_-ihDaFRMRCxbRk3IKUg-woaYvjZiUP3_JaLIeuVj1tr5Pv-GDcfxx87qbPZuimaaMM1xETRmCXlaqGZT-1xVp4XUVU9uygpLXCnY9b4I4d2i8uiyeVP6vjOe7L0_knecTxGCfqoEn61Et4Hp4QgJrGFLtPZJwTn6VbJnSg9hK4iDjEMBvw9oSx6BtMfPVAQDrmNaVmcFVESRpnX1H-7uuuHX_F4QK41S53zAcSNhFYmWCThfgq40Hzt2wDqHrAcRUh-gENpbzl2rhC_TkK_TLg97LuC1KYhWjWaY",
     'Connection': 'keep-alive',
     'Priority': 'u=0',
 }
@@ -52,7 +52,7 @@ data_create_exam= {
     'send_notification': 0,
     'is_featured': 0,
     'is_criteria': 0,
-    'is_active': 0,
+    'is_active': 1,
     'status': 1,
     'is_free': is_free,
     'price': price,
@@ -755,26 +755,24 @@ if response_create_exam.status_code == 201:
     print(f"Opening exam URL in browser: {exam_url}")
     webbrowser.open(exam_url)
 
-    #time.sleep(2)
-
-    
     # Step 4: Lock the questions for the created exam
     url_lock_questions = f"https://api-adm.ambition.guru/api/v1/admin/exams/{exam_id}/lock-questions"
     response_lock_questions = requests.post(url_lock_questions, headers=headers)
 
- 
-# Check if the locking was successful
-if response_lock_questions.status_code == 200:
-    print(f"Questions locked successfully for Exam ID: {exam_id}")
-else:
-    print(f"Failed to lock questions. Status Code: {response_lock_questions.status_code}")
-    print("Response Headers:", response_lock_questions.headers)
-    print("Response Text:", response_lock_questions.text)  # Log raw response
+    # Check if the locking was successful
+    if response_lock_questions.status_code == 200:
+        print(f"Questions locked successfully for Exam ID: {exam_id}")
+    else:
+        print(f"Failed to lock questions. Status Code: {response_lock_questions.status_code}")
+        print("Response Headers:", response_lock_questions.headers)
+        print("Response Text:", response_lock_questions.text)  # Log raw response
 
-    # Handle empty or invalid JSON response gracefully
-    try:
-        print("Response JSON:", response_lock_questions.json())
-    except requests.exceptions.JSONDecodeError:
-        print("No JSON content in response.")
- 
+        try:
+            print("Response JSON:", response_lock_questions.json())
+        except requests.exceptions.JSONDecodeError:
+            print("No JSON content in response.")
+else:
+    print("Failed to create exam. Status Code:", response_create_exam.status_code)
+    print("Response Headers:", response_create_exam.headers)
+    print("Response Text:", response_create_exam.text)  # Log raw response
  
